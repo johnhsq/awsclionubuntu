@@ -33,4 +33,4 @@ Test your AWS environment with the following commands
      # jq --version
      # aws --version
      # aws iam list-account-aliases
-     #$ aws ec2 describe-instances
+     # aws ec2 describe-instances
