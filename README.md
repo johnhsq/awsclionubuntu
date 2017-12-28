@@ -1,5 +1,5 @@
 ## Docker image with AWS CLI on Ubuntu
-This repository contains **Dockerfile** of [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) for Docker published to the public [Docker Hub] (https://hub.docker.com/r/johnhsq/awsclionubuntu/).
+This repository contains **Dockerfile** of [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) for Docker published to the public [Docker Hub](https://hub.docker.com/r/johnhsq/awsclionubuntu/).
 
 
 ### Base Docker Image
