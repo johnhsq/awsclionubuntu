@@ -43,7 +43,7 @@ RUN \
 # Install curl
 RUN apt-get -y -qq update && \
 	apt-get install -y -qq curl && \
-	apt-get clean
+	apt-get install -y -qq groff
 
 # Install jq to parse json within bash scripts
 RUN curl -o /usr/local/bin/jq http://stedolan.github.io/jq/download/linux64/jq && \
@@ -52,11 +52,13 @@ RUN curl -o /usr/local/bin/jq http://stedolan.github.io/jq/download/linux64/jq &
 # Install AWS CLI
 RUN \
   pip3 install awscli --upgrade --user && \
+  apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 ENV DEBIAN_FRONTEND teletype
 
 # add AWS CLI command path
 ENV PATH ~/.local/bin:$PATH
+
 # Use bash instead of sh by default
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
