@@ -28,9 +28,9 @@ Start AWS CLI
 
 Test your AWS environment with the following commands
 
-     $ python3 --version
-     $ curl --version
-     $ jq --version
-     $ aws --version
-     $ aws iam list-account-aliases
-     $ aws ec2 describe-instances
+     # python3 --version
+     # curl --version
+     # jq --version
+     # aws --version
+     # aws iam list-account-aliases
+     #$ aws ec2 describe-instances
