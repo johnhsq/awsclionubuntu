@@ -59,6 +59,12 @@ ENV DEBIAN_FRONTEND teletype
 # add AWS CLI command path
 ENV PATH ~/.local/bin:$PATH
 
+# Install useful packages: ssh, vim
+RUN \
+  apt-get update && \
+  apt-get install -y -qq ssh && \
+  apt-get install -y -qq vim
+
 # Use bash instead of sh by default
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
