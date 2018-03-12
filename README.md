@@ -54,7 +54,7 @@ Test your AWS environment with the following commands
   
     aws ec2 describe-instances --filters "Name=tag:Name,Values=JohnTestWebServer" | grep -i instanceid
   
-    aws ec2 terminate-instances --instance-ids i-0fb9ac7aa83987f78
+    aws ec2 terminate-instances --instance-ids <value>
 	
 #### Create/Describe/Delete Database
     
@@ -73,5 +73,7 @@ Test your AWS environment with the following commands
 
     aws rds describe-db-instances --db-instance-identifier <value> | grep -i status
 
-    aws rds delete-db-instance --db-instance-identifier <value> 
+    aws rds delete-db-instance --db-instance-identifier <value> --no-skip-final-snapshot --final-db-snapshot-identifier <value>
+
+
 
