@@ -16,6 +16,7 @@ In your local linux add the following command alias to your profile (e.g. ~/.bas
 
      alias awscli.test="docker run \
        -it \
+       -v $(pwd):/data \
        --env AWS_ACCESS_KEY_ID= <your aws access key> \
        --env AWS_SECRET_ACCESS_KEY= <your aws secret key> \
        --env AWS_DEFAULT_REGION= <your aws default region> \
@@ -55,3 +56,22 @@ Test your AWS environment with the following commands
   
     aws ec2 terminate-instances --instance-ids i-0fb9ac7aa83987f78
 	
+#### Create/Describe/Delete Database
+    
+    aws rds create-db-instance \
+        --db-instance-identifier <value> \
+        --db-instance-class db.t2.micro \
+        --engine MySQL \
+        --allocated-storage 20 \
+        --master-username admin \
+        --master-user-password admin1234 \
+        --backup-retention-period 7
+
+    aws rds describe-db-instances
+
+    aws rds describe-db-instances --db-instance-identifier <value>
+
+    aws rds describe-db-instances --db-instance-identifier <value> | grep -i status
+
+    aws rds delete-db-instance --db-instance-identifier <value> 
+
