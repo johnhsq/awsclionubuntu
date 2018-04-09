@@ -45,10 +45,6 @@ RUN apt-get -y -qq update && \
 	apt-get install -y -qq curl && \
 	apt-get install -y -qq groff
 
-# Install ssh
-RUN apt-get -y -qq update && \
-	apt-get install -y -qq openssh-client
-
 # Install jq to parse json within bash scripts
 RUN curl -o /usr/local/bin/jq http://stedolan.github.io/jq/download/linux64/jq && \
   chmod +x /usr/local/bin/jq
@@ -63,10 +59,11 @@ ENV DEBIAN_FRONTEND teletype
 # add AWS CLI command path
 ENV PATH ~/.local/bin:$PATH
 
-# Install useful packages: ssh, vim
+# Install useful packages: ssh, ssh client, vim
 RUN \
   apt-get update && \
   apt-get install -y -qq ssh && \
+  apt-get install -y -qq openssh-client && \
   apt-get install -y -qq vim
 
 # Use bash instead of sh by default
