@@ -45,6 +45,10 @@ RUN apt-get -y -qq update && \
 	apt-get install -y -qq curl && \
 	apt-get install -y -qq groff
 
+# Install ssh
+RUN apt-get -y -qq update && \
+	apt-get install -y -qq openssh-client
+
 # Install jq to parse json within bash scripts
 RUN curl -o /usr/local/bin/jq http://stedolan.github.io/jq/download/linux64/jq && \
   chmod +x /usr/local/bin/jq
